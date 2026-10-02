@@ -581,16 +581,41 @@ Notes on the numbers:
 
 ## 8. Serving & interface
 
-- `llama-server` (llama.cpp) on localhost for completions and possibly embeddings.
-- FastAPI app: `/chat` (SSE), `/healthz`, `/metrics`, `/admin/stale` (content needing
-  re-verification).
-- Front end: one static page, vanilla JS, no build step. Streams tokens; renders fact cards
-  immediately on retrieval so the user sees something in <1 s. Mobile-first — this gets
-  used standing in a garage holding a dead battery.
-- Accessibility and a no-JS fallback (plain POST → rendered page) from the start.
+- `llama-server` (llama.cpp) on localhost for completions and possibly embeddings. **Built
+  so far (src/rva_chat/serve/) uses Ollama**, matching the dev-machine choice in §8's
+  Docker note and §4 — swap at deployment, see llm.py's docstring.
+- FastAPI app (`src/rva_chat/serve/app.py`): `/chat` (SSE, GET), `/chat-plain` (POST,
+  no-JS), `/healthz`, `/metrics`, `/admin/stale`.
+- **Built differently from the original "streams tokens" plan, deliberately:** a guardrail
+  that can only judge the *complete* answer can't un-send words a user already saw —
+  streaming prose token-by-token and then discarding it for failing the grounded-check
+  (§5) is either impossible or requires a jarring "retract what you just read" UI. So
+  `/chat` streams two SSE events instead of a token stream: `cards` fires immediately on
+  retrieval (the actual UX goal — something visible in <1 s while the model is still
+  running), then `answer` fires once, carrying the complete, already-guardrail-checked
+  text (or the drop reason, if it failed). `done` closes the stream. This keeps "a bad
+  generation degrades to cards-only, never a wrong answer" fully intact; the cost is the
+  prose appearing all at once after generation finishes rather than growing word by word.
+  Revisit if a faster model (§4 bake-off) makes the wait feel short enough that it's not
+  worth the tradeoff, or if an incremental guardrail gets built.
+- Front end: one static page (`templates.py`), vanilla JS, no build step, dark/light aware.
+  Mobile-first, large tap targets — this gets used standing in a garage holding a dead
+  battery.
+- **No-JS fallback, implemented as progressive enhancement, not a separate page:** one
+  `<form method="POST" action="/chat-plain">` serves both paths. JS intercepts `submit`
+  and talks to `/chat` via `EventSource` (which only does GET — hence `/chat` being GET
+  with `q` as a query param, not a POST body); when JS is off, the browser's native POST
+  hits `/chat-plain`, which re-renders the *same* page shell with the question pre-filled
+  and the answer/cards already in place. One template, one set of styles, two entry points.
 - Access: LAN-only, permanently — see §7's access-mode decision (single device vs. LAN
-  server). No tunnel, no public exposure, in either mode.
-- Privacy: log queries without IPs or identifiers; make the log opt-out-able and rotate it.
+  server). No tunnel, no public exposure, in either mode. `uvicorn ... --host 0.0.0.0` only
+  at actual deployment; the dev-machine default binds `127.0.0.1`.
+- Privacy: the query log (`src/rva_chat/serve/telemetry.py`) writes query text, matched
+  entity IDs, grounded-check result, and latency — never an IP, user-agent, or session
+  id. A `no_log` checkbox in the UI (and query param on `/chat`) skips logging for that
+  request. Rotation is by calendar day (`logs/queries-YYYY-MM-DD.jsonl`), not a logging
+  framework — enough for one low-traffic box. `/admin/stale` reuses the "~6 months" rule
+  from §3d (`STALE_DAYS_DEFAULT = 180`) to list entities due for re-verification.
 - **Containerization: skip Docker for v1.** The overhead is small in absolute terms
   (~50–100 MB RAM for the daemon, ~5–15 s added to a boot you're already doing on a cold
   schedule) but it buys little here: this is one box running one install, not a fleet, and
@@ -619,9 +644,10 @@ cache/
   embeddings.npy                    content-hash-keyed, rebuilt on change (not committed)
 src/rva_chat/
   ingest/          fetch.py extract.py chunk.py embed.py import_csv.py
-  retrieve/        hybrid.py bm25.py rerank.py jurisdiction.py
+  retrieve/        corpus.py search.py (BM25 now; rerank.py/jurisdiction.py pending)
   generate/        prompt.py llm.py guardrails.py cards.py
-  serve/           app.py  static/
+  serve/           app.py telemetry.py templates.py  (built — see §8)
+  cli.py                                              (built — terminal chat, Phase 1)
 eval/
   goldens.yaml  run_eval.py  judge.py  reports/
 bench/
