@@ -1,0 +1,20 @@
+id: adopt-a-highway-vdot
+name: Adopt-a-Highway (VDOT)
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- waste
+- advocacy
+volunteer: true
+description: Virginia's Adopt-a-Highway program enlists the support of over 20,000 residents in removing
+  litter from Commonwealth roadsides. Running since the 1980s, this program is a key strategy in maintaining
+  a positive travel experience for residents and visitors, and in preventing litter from entering local
+  waterways.
+url: https://www.virginiadot.org/programs/prog-aah-faqs.asp
+notes_internal: In case we're interested in potentially adopting a nearby road for litter clean-up.
+source: resources.csv
+source_url: https://www.virginiadot.org/programs/prog-aah-faqs.asp
+last_verified: '2026-10-01'
+verified_by: import

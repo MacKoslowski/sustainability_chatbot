@@ -1,0 +1,17 @@
+id: farmbus
+name: FarmBus
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- general
+volunteer: false
+description: Farm to Family is a year-round CSA and local farmer's market serving Richmond, VA and Washington,
+  DC.
+url: https://thefarmbus.com/
+notes_internal: Active partnership in place.
+source: resources.csv
+source_url: https://thefarmbus.com/
+last_verified: '2026-10-01'
+verified_by: import

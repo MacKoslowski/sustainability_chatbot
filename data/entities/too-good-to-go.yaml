@@ -1,0 +1,16 @@
+id: too-good-to-go
+name: Too Good to Go
+type: org
+scope: online
+jurisdiction: []
+topics:
+- food
+- waste
+volunteer: false
+description: Too Good To Go is a social impact company on a mission to inspire and empower everyone to
+  fight food waste together.
+url: https://www.toogoodtogo.com/en-us
+source: resources.csv
+source_url: https://www.toogoodtogo.com/en-us
+last_verified: '2026-10-01'
+verified_by: import

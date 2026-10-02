@@ -1,0 +1,20 @@
+id: purring-hearts-va
+name: Purring Hearts VA
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- reuse
+volunteer: true
+description: Purring Hearts VA is a foster-based cat rescue proudly rooted in the Richmond community.
+  As the rescue division of Lionhearts, Inc., we are 100% volunteer-run and powered by the generosity
+  of donors and foster families who open their hearts and homes to cats in need.
+url: https://purringheartsva.org/
+notes_public: They accept donations of clean, empty pill bottles for reuse in their foster program.
+notes_internal: We were told they're pretty much always looking for more; consider setting up a collection
+  bin in the office.
+source: resources.csv
+source_url: https://purringheartsva.org/
+last_verified: '2026-10-01'
+verified_by: import

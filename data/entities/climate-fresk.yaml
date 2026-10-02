@@ -1,0 +1,15 @@
+id: climate-fresk
+name: Climate Fresk
+type: org
+scope: online
+jurisdiction: []
+topics:
+- education
+volunteer: false
+description: An organization that is delivering sustainability trainings.
+url: https://climatefresk.org/world/
+notes_internal: Partnership in place with other entities.
+source: resources.csv
+source_url: https://climatefresk.org/world/
+last_verified: '2026-10-01'
+verified_by: import

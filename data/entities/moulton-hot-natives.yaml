@@ -1,0 +1,19 @@
+id: moulton-hot-natives
+name: Moulton Hot Natives
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- habitat
+volunteer: false
+description: Moulton Hot Natives' goal is to make native plants that are sustainably sourced from wild
+  populations in the Richmond area more commercially available and to spread awareness that native plants
+  are not just beautiful and low maintenance, they are the backbone that all living things depend upon.
+url: https://moultonhotnatives.square.site/about-us
+notes_internal: Local to Northside; grower sources local ecotype seeds and grows them from a home nursery.
+  Avoid publishing the grower's home-based location.
+source: resources.csv
+source_url: https://moultonhotnatives.square.site/about-us
+last_verified: '2026-10-01'
+verified_by: import

@@ -1,0 +1,18 @@
+id: shalom-farms
+name: Shalom Farms
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- food
+volunteer: true
+description: Shalom Farms is a nonprofit farm and food justice organization working for an equitable food
+  system in Richmond, VA. With two production farms, dozens of partners, and innovative food access programs,
+  Shalom Farms grows and distributes over 600,000 servings of Certified Naturally Grown produce every
+  year.
+url: https://shalomfarms.org/
+source: resources.csv
+source_url: https://shalomfarms.org/
+last_verified: '2026-10-01'
+verified_by: import

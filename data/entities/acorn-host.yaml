@@ -1,0 +1,15 @@
+id: acorn-host
+name: Acorn Host
+type: org
+scope: online
+jurisdiction: []
+topics:
+- energy
+volunteer: false
+description: IT hosting company using carbon-neutral servers -- Friendly Green Web Hosting from Portland,
+  Oregon.
+url: https://www.acornhost.com/
+source: resources.csv
+source_url: https://www.acornhost.com/
+last_verified: '2026-10-01'
+verified_by: import

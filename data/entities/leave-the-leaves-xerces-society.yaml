@@ -1,0 +1,15 @@
+id: leave-the-leaves-xerces-society
+name: Leave the Leaves / Xerces Society
+type: org
+scope: online
+jurisdiction: []
+topics:
+- habitat
+- education
+volunteer: false
+description: Winter Habitat Protection
+url: https://xerces.org/leave-the-leaves
+source: resources.csv
+source_url: https://xerces.org/leave-the-leaves
+last_verified: '2026-10-01'
+verified_by: import

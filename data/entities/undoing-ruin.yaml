@@ -1,0 +1,18 @@
+id: undoing-ruin
+name: Undoing Ruin
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- habitat
+- education
+volunteer: false
+description: Conservation landscaping company.
+url: https://undoingruin.com/
+notes_internal: Learning about quick plant swaps for when people are looking to go nuts at Lowes Garden
+  Center is something accessible.
+source: resources.csv
+source_url: https://undoingruin.com/
+last_verified: '2026-10-01'
+verified_by: import

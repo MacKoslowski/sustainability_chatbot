@@ -1,0 +1,18 @@
+id: scrap-rva-richmond-creative-reuse-center
+name: SCRAP RVA (Richmond Creative Reuse Center)
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- reuse
+- education
+volunteer: false
+description: A 501(c)(3) nonprofit whose mission is to inspire creative reuse and environmentally sustainable
+  behavior by providing educational programs and affordable materials to the community. A donation-based
+  creative reuse store and donation center in Richmond, VA.
+url: https://richmond.scrapcreativereuse.org/
+source: resources.csv
+source_url: https://richmond.scrapcreativereuse.org/
+last_verified: '2026-10-01'
+verified_by: import

@@ -1,0 +1,18 @@
+id: ecosia
+name: Ecosia
+type: org
+scope: online
+jurisdiction: []
+topics:
+- habitat
+volunteer: false
+description: Ecosia is a not-for-profit company that plants and protects trees. We dedicate 100% of our
+  profits to the planet and create simple ways for people to be climate active every day. Collaborating
+  with local communities, we have planted more than 200 million trees (and counting) all over the world
+url: https://www.ecosia.org/
+notes_internal: 'Internal tag: "AI solution that uses renewable energy" -- imprecise (it''s a search engine,
+  not an AI product); don''t surface this framing publicly.'
+source: resources.csv
+source_url: https://www.ecosia.org/
+last_verified: '2026-10-01'
+verified_by: import

@@ -1,0 +1,17 @@
+id: rag-bones-bicycle-cooperative
+name: Rag & Bones Bicycle Cooperative
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- reuse
+- transport
+volunteer: true
+description: Volunteer-run bicycle co-operative located in Northside in Richmond, Virginia. A D.I.Y. space,
+  not a traditional bike shop -- provides the tools and knowledge needed to complete your own bike repair.
+url: https://ragandbonesrva.org/
+source: resources.csv
+source_url: https://ragandbonesrva.org/
+last_verified: '2026-10-01'
+verified_by: import

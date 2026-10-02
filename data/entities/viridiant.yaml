@@ -1,0 +1,16 @@
+id: viridiant
+name: Viridiant
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- energy
+- education
+volunteer: false
+description: Local energy efficiency consultancy; offers trainings.
+url: https://viridiant.org/
+source: resources.csv
+source_url: https://viridiant.org/
+last_verified: '2026-10-01'
+verified_by: import

@@ -1,0 +1,19 @@
+id: the-james-river-association
+name: The James River Association
+type: org
+scope: local
+jurisdiction:
+- regional
+topics:
+- water
+- habitat
+- advocacy
+volunteer: false
+description: The James River Association is dedicated to being a guardian of the James River, providing
+  a voice for the river, and taking action to promote conservation and responsible stewardship of its
+  natural resources
+url: https://thejamesriver.org/
+source: resources.csv
+source_url: https://thejamesriver.org/
+last_verified: '2026-10-01'
+verified_by: import
